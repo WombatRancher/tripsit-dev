@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+ALL_PROJECTS=( \
+	"main-website" \
+	"api" \
+	"database" \
+)
+
+ROOT_PATH="$(dirname "${0}")"
+SCRIPTS_PATH="${ROOT_PATH}/scripts"
+LIB_PATH="${SCRIPTS_PATH}/lib"
+REPOS_PATH="${ROOT_PATH}/repos"
+
+function usage {
+	cat << EUSAGE
+usage: ./tsctl <command>
+
+commands:
+	chkenv		Ensures local environment has dependencies installed
+	bootstrap	Clones all git repos down and installs their dependencies
+	clean		Removes and reinstalls all artifacts
+EUSAGE
+}
+
+case "${1}" in
+	"bootstrap")
+		source "${SCRIPTS_PATH}/bootstrap"
+		;;
+	"chkenv")
+		source "${SCRIPTS_PATH}/chkenv"
+		;;
+	"clean")
+		source "${SCRIPTS_PATH}/clean"
+		;;
+	*)
+		>&2 echo "Command not found '${1}'"
+		usage
+		exit 1
+esac
+
+exit 0
