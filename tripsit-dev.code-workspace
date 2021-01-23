@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "@tripsit/api",
+			"path": "./repos/api"
+		},
+		{
+			"name": "@tripsit/database",
+			"path": "./repos/database"
+		},
+		{
+			"name": "@tripsit/main-website",
+			"path": "./repos/main-website"
+		},
+		{
+      "name": "@tripsit",
+			"path": "."
+		}
+	],
+	"settings": {}
+}
