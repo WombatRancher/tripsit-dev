@@ -24,13 +24,13 @@ EUSAGE
 
 case "${1}" in
 	"bootstrap")
-		source "${SCRIPTS_PATH}/bootstrap"
+		source "${SCRIPTS_PATH}/bootstrap.sh"
 		;;
 	"chkenv")
-		source "${SCRIPTS_PATH}/chkenv"
+		source "${SCRIPTS_PATH}/chkenv.sh"
 		;;
 	"clean")
-		source "${SCRIPTS_PATH}/clean"
+		source "${SCRIPTS_PATH}/clean.sh"
 		;;
 	*)
 		>&2 echo "Command not found '${1}'"
