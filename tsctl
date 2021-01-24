@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 ALL_PROJECTS=( \
 	"main-website" \
@@ -16,26 +17,22 @@ function usage {
 usage: ./tsctl <command>
 
 commands:
-	chkenv		Ensures local environment has dependencies installed
 	bootstrap	Clones all git repos down and installs their dependencies
+	test		Runs automated tests for repositories
 	clean		Removes and reinstalls all artifacts
+	chkenv		Ensures local environment has dependencies installed
 EUSAGE
 }
 
 case "${1}" in
-	"bootstrap")
-		source "${SCRIPTS_PATH}/bootstrap.sh"
+	"bootstrap" | "test" | "clean "| "chkenv ")
+		source "${SCRIPTS_PATH}/${1}.sh"
 		;;
-	"chkenv")
-		source "${SCRIPTS_PATH}/chkenv.sh"
-		;;
-	"clean")
-		source "${SCRIPTS_PATH}/clean.sh"
+	"--help" | "-h")
+		usage
 		;;
 	*)
 		>&2 echo "Command not found '${1}'"
 		usage
 		exit 1
 esac
-
-exit 0

@@ -1,4 +1,3 @@
-
 for project_id in "${ALL_PROJECTS[@]}"; do
 	project_path="${REPOS_PATH}/${project_id}"
 
