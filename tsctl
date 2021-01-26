@@ -24,15 +24,20 @@ commands:
 EUSAGE
 }
 
-case "${1}" in
+command_arg="${1}"
+if [[ "${1}" =~ /tsctl$/ ]]; then
+    command_arg="${2}"
+fi
+
+case "${command_arg}" in
 	"bootstrap" | "test" | "clean "| "chkenv ")
-		source "${SCRIPTS_PATH}/${1}.sh"
+		source "${SCRIPTS_PATH}/${command_arg}.sh"
 		;;
 	"--help" | "-h")
 		usage
 		;;
 	*)
-		>&2 echo "Command not found '${1}'"
+		>&2 echo "Command not found '${command_arg}'"
 		usage
 		exit 1
 esac
