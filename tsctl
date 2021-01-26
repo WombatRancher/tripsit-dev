@@ -30,7 +30,7 @@ if [[ "${1}" =~ /tsctl$/ ]]; then
 fi
 
 case "${command_arg}" in
-	"bootstrap" | "test" | "clean "| "chkenv ")
+	"bootstrap" | "test" | "clean "| "chkenv")
 		source "${SCRIPTS_PATH}/${command_arg}.sh"
 		;;
 	"--help" | "-h")
