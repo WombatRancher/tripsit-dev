@@ -1,13 +1,17 @@
-#!/usr/bin/env bash
-set -e
-
 ALL_PROJECTS=( \
 	"main-website" \
 	"api" \
 	"database" \
+	"irc-server" \
+)
+
+DOCKER_COMPOSE_PROJECT_IDS=( \
+	"api" \
+	"irc-server" \
 )
 
 ROOT_PATH="$(dirname "${0}")"
+CONFIG_PATH="${ROOT_PATH}/config"
 SCRIPTS_PATH="${ROOT_PATH}/scripts"
 LIB_PATH="${SCRIPTS_PATH}/lib"
 REPOS_PATH="${ROOT_PATH}/repos"
@@ -18,6 +22,7 @@ usage: ./tsctl <command>
 
 commands:
 	bootstrap	Clones all git repos down and installs their dependencies
+	up			Starts all docker containers
 	test		Runs automated tests for repositories
 	clean		Removes and reinstalls all artifacts
 	chkenv		Ensures local environment has dependencies installed
@@ -30,7 +35,7 @@ if [[ "${1}" =~ /tsctl$/ ]]; then
 fi
 
 case "${command_arg}" in
-	"bootstrap" | "test" | "clean "| "chkenv")
+	"bootstrap" | "up" | "test" | "clean "| "chkenv")
 		source "${SCRIPTS_PATH}/${command_arg}.sh"
 		;;
 	"--help" | "-h")

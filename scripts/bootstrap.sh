@@ -17,5 +17,11 @@ for project_id in "${ALL_PROJECTS[@]}"; do
 		if [[ -f "${project_path}/.env.example" ]]; then
 			cp "${project_path}/.env.example" "${project_path}/.env"
 		fi
+
+		# Project specific setup
+		case "${project_id}" in
+			"irc-server")
+				;;
+		esac
 	fi
 done

@@ -13,9 +13,18 @@
 			"path": "./repos/main-website"
 		},
 		{
+			"name": "@tripsit/irc-server",
+			"path": "./repos/irc-server"
+		},
+		{
       "name": "@tripsit",
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "TripSit",
+		"files.exclude": {
+			"repos/": true
+		}
+	}
 }
