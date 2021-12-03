@@ -1,20 +1,28 @@
 {
 	"folders": [
 		{
-			"name": "@tripsit/api",
-			"path": "./repos/api"
+			"name": "@tripsit/api-gql",
+			"path": "./repos/api-gql"
 		},
 		{
-			"name": "@tripsit/database",
-			"path": "./repos/database"
+			"name": "@tripsit/admin-portal",
+			"path": "./repos/admin-portal"
+		},
+		{
+			"name": "@tripsit/tripbot-discord",
+			"path": "./repos/tripbot-discord"
+		},
+		{
+			"name": "@tripsit/mobile-app",
+			"path": "./repos/mobile-app"
 		},
 		{
 			"name": "@tripsit/main-website",
 			"path": "./repos/main-website"
 		},
 		{
-			"name": "@tripsit/irc-server",
-			"path": "./repos/irc-server"
+			"name": "@tripsit/types",
+			"path": "./repos/types"
 		},
 		{
       "name": "@tripsit",
@@ -22,9 +30,15 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "TripSit",
 		"files.exclude": {
 			"repos/": true
-		}
+		},
+		"eslint.workingDirectories": [
+			"./repos/api-gql",
+			"./repos/admin-portal",
+			"./repos/tripbot-discord",
+			"./repos/mobile-app",
+			"./repos/main-website"
+		]
 	}
 }

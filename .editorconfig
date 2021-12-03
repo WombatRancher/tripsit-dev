@@ -11,7 +11,7 @@ tab_width = 2
 [scripts/**/*]
 tab_width = 4
 
-[tsctl]
+[{tsctl,*.sh}]
 tab_width = 4
 
 [*.md]
