@@ -1,44 +1,25 @@
 {
 	"folders": [
 		{
-			"name": "@tripsit/api-gql",
-			"path": "./repos/api-gql"
+			"name": "@tripsit/tripsit-discord-bot",
+			"path": "./repos/tripsit-discord-bot"
 		},
 		{
-			"name": "@tripsit/admin-portal",
-			"path": "./repos/admin-portal"
-		},
-		{
-			"name": "@tripsit/tripbot-discord",
-			"path": "./repos/tripbot-discord"
-		},
-		{
-			"name": "@tripsit/mobile-app",
-			"path": "./repos/mobile-app"
-		},
-		{
-			"name": "@tripsit/main-website",
-			"path": "./repos/main-website"
-		},
-		{
-			"name": "@tripsit/types",
-			"path": "./repos/types"
-		},
-		{
-      "name": "@tripsit",
-			"path": "."
+			"name": "@tripsit/http-api",
+			"path": "./repos/http-api"
 		}
+		{
+			"name": "@tripsit",
+			"path": "."
+		},
 	],
 	"settings": {
 		"files.exclude": {
 			"repos/": true
 		},
 		"eslint.workingDirectories": [
-			"./repos/api-gql",
-			"./repos/admin-portal",
-			"./repos/tripbot-discord",
-			"./repos/mobile-app",
-			"./repos/main-website"
+			"./repos/tripsit-discord-bot",
+			"./repos/http-api"
 		]
 	}
 }

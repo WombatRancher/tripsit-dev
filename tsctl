@@ -2,14 +2,12 @@
 set -e
 
 ALL_PROJECTS=( \
-	"main-website" \
-	"api-gql" \
-	"admin-portal" \
-	"tripbot-discord" \
+	"http-api" \
+	"tripsit-discord-bot" \
 )
 
 DOCKER_COMPOSE_PROJECT_IDS=( \
-	"api-gql" \
+	"http-api" \
 )
 
 ROOT_PATH="$(dirname "${0}")"
