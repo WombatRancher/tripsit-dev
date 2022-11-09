@@ -7,7 +7,7 @@
 		{
 			"name": "@tripsit/http-api",
 			"path": "./repos/http-api"
-		}
+		},
 		{
 			"name": "@tripsit",
 			"path": "."
