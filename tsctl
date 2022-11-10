@@ -8,6 +8,7 @@ ALL_PROJECTS=( \
 
 DOCKER_COMPOSE_PROJECT_IDS=( \
 	"http-api" \
+	"discord-bot-test" \
 )
 
 ROOT_PATH="$(dirname "${0}")"
