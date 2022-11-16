@@ -3,12 +3,12 @@ set -e
 
 ALL_PROJECTS=( \
 	"http-api" \
-	"discord-bot-test" \
+	"tripsit-discord-bot" \
 )
 
 DOCKER_COMPOSE_PROJECT_IDS=( \
 	"http-api" \
-	"discord-bot-test" \
+	"tripsit-discord-bot" \
 )
 
 ROOT_PATH="$(dirname "${0}")"
@@ -23,7 +23,7 @@ usage: ./tsctl <command>
 
 commands:
 	bootstrap	Clones all git repos down and installs their dependencies
-	up			Starts all docker containers
+	up		Starts all docker containers
 	test		Runs automated tests for repositories
 	clean		Removes and reinstalls all artifacts
 	chkenv		Ensures local environment has dependencies installed
@@ -36,7 +36,7 @@ if [[ "${1}" =~ /tsctl$/ ]]; then
 fi
 
 case "${command_arg}" in
-	"bootstrap" | "up" | "test" | "clean "| "chkenv")
+	"bootstrap" | "up" | "test" | "clean"| "chkenv")
 		source "${SCRIPTS_PATH}/${command_arg}.sh"
 		;;
 	"--help" | "-h")
