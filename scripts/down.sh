@@ -6,10 +6,11 @@ if [[ ! -z "${containers}" ]]; then
 	echo "Containers are running: ${running_containers}"
 	if [[ ! -z "${running_containers}" ]]; then
 		echo "Stopping containers"
-		docker stop "${running_containers}"
+		docker stop ${running_containers}
 	fi
-	echo "Removing container"
-	docker rm "${containers}"
+	echo "Delete containers"
+	docker rm $(docker ps -qaf name=tripsit) 
+	# docker rm "${containers}"
 	echo "Unseting container"
 	unset running_containers
 fi
