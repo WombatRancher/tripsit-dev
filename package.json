@@ -4,6 +4,13 @@
     "version": "0.1.0",
     "main": "./tsctl",
     "scripts": {
+      "chkenv": "./tsctl chkenv",
+      "bootstrap": "./tsctl bootstrap",
+      "up": "./tsctl up",
+      "test": "./tsctl test",
+      "clean": "./tsctl clean",
+      "rebuild": "./tsctl rebuild",
+      "down": "./tsctl down",
       "lint": "eslint --ext .ts,.js .",
       "patch": "npm version patch -git-tag-version false"
     },
