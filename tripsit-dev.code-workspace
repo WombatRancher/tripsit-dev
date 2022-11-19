@@ -9,6 +9,10 @@
 			"path": "./repos/http-api"
 		},
 		{
+			"name": "@tripsit/admin-panel",
+			"path": "./repos/admin-panel"
+		},
+		{
 			"name": "@tripsit",
 			"path": "."
 		},
@@ -19,7 +23,8 @@
 		},
 		"eslint.workingDirectories": [
 			"./repos/tripsit-discord-bot",
-			"./repos/http-api"
+			"./repos/http-api",
+			"./repos/admin-panel"
 		]
 	}
 }
