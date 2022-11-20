@@ -1,3 +1,9 @@
+# Remove project repo directories
+echo "Removing repository folders"
+for project_id in ${ALL_PROJECTS[@]}; do
+	rm -rf "${REPOS_PATH}/${project_id}"
+done
+
 echo "Removing containers"
 containers="$(docker ps -qaf name=tripsit)"
 if [[ ! -z "${containers}" ]]; then
@@ -24,13 +30,17 @@ fi
 unset container_images
 
 echo "Removing Networks"
+container_networks="$(docker network ls -qf name=http-api_default)"
+if [[ ! -z "${container_networks}" ]]; then
+	echo "Removing http-api_default network"
+	docker network rm ${container_networks}
+fi
+unset container_networks
+
 container_networks="$(docker network ls -qf name=tripsit)"
 if [[ ! -z "${container_networks}" ]]; then
-	# If the network name is not 'bridge', 'host', 'none', remove it
-	if [[ ! "${container_networks}" =~ ^(bridge|host|none)$ ]]; then
-		echo "Networks: ${container_networks}"
-		docker network rm ${container_networks}
-	fi
+	echo "Removing tripsit network"
+	docker network rm ${container_networks}
 fi
 unset container_networks
 
