@@ -11,7 +11,7 @@
         "clean": "./tsctl clean",
         "rebuild": "./tsctl rebuild",
         "down": "./tsctl down",
-        "lint": "eslint --ext .ts,.js .",
+        "lint": "eslint --fix --ext .ts,.js .",
         "patch": "npm version patch -git-tag-version false"
     },
     "authors": [
