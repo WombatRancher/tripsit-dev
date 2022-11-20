@@ -27,20 +27,13 @@ for project_id in "${ALL_PROJECTS[@]}"; do
 
         # Project specific setup
         case "${project_id}" in
-            "irc-server") 🤡 ;;
+            "irc-server")
+            ;;
 
             "http-api")
-				# echo "Setting up DB"
-				# npm --prefix ./repos/http-api/ run setup
-				# echo "Migrating DB"
-				# npm --prefix ./repos/http-api/ run migrate
-				# echo "Starting DB"
-				# npm --prefix ./repos/http-api/ run start
 			;;
 
             "discord-bot-test")
-				# echo "Starting Discord Bot"
-				# npm --prefix ./repos/discord-bot-test/ run start
 			;;
         esac
     fi

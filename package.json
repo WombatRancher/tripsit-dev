@@ -9,7 +9,6 @@
         "up": "./tsctl up",
         "test": "./tsctl test",
         "clean": "./tsctl clean",
-        "rebuild": "./tsctl rebuild",
         "down": "./tsctl down",
         "lint": "eslint --fix --ext .ts,.js .",
         "patch": "npm version patch -git-tag-version false"
