@@ -1,2 +1,4 @@
 /repos/*
 !/repos/.gitkeep
+/node_modules/*
+.env
