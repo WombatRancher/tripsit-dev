@@ -9,16 +9,16 @@ for project_id in "${ALL_PROJECTS[@]}"; do
             echo "Cloning ${project_id}..."
             git clone "git@github.com:TripSit/${project_id}.git" "${project_path}" -q
 
-            # For now we need to checkout the postgres branch of tripbot
-            if [ ${project_id} = http-api ]; then
-                # echo "Changing branch on ${project_id}"
-                cd ~/tripsit-dev/repos/${project_id}
-                # echo "Changed directory"
-                git checkout dev/linting
-                # echo "Checked out dev/linting"
-                cd ~/tripsit-dev
-                # echo "Back to root"
-            fi
+            # # For now we need to checkout the postgres branch of tripbot
+            # if [ ${project_id} = http-api ]; then
+            #     # echo "Changing branch on ${project_id}"
+            #     cd ~/tripsit-dev/repos/${project_id}
+            #     # echo "Changed directory"
+            #     git checkout dev/linting
+            #     # echo "Checked out dev/linting"
+            #     cd ~/tripsit-dev
+            #     # echo "Back to root"
+            # fi
 
             # For now we need to checkout the postgres branch of tripbot
             if [ ${project_id} = tripsit-discord-bot ]; then
