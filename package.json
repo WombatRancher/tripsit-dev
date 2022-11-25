@@ -11,7 +11,8 @@
         "clean": "./tsctl clean",
         "down": "./tsctl down",
         "lint": "eslint --fix --ext .ts,.js .",
-        "patch": "npm version patch -git-tag-version false"
+        "patch": "npm version patch -git-tag-version false",
+        "update-db": "ts-node --transpile-only ./scripts/updateDB.ts"
     },
     "authors": [
         "SevenCats <sevencats@tripsit.me>",
@@ -28,7 +29,13 @@
         "eslint-import-resolver-typescript": "^3.5.2",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-jest": "^27.1.5",
+        "knex-types": "^0.4.0",
         "nodemon": "^2.0.20",
+        "ts-node": "^10.9.1",
         "typescript": "^4.9.3"
+    },
+    "dependencies": {
+        "knex": "^2.3.0",
+        "winston": "^3.8.2"
     }
 }
