@@ -1,6 +1,5 @@
 import knex from 'knex';
 import { parse } from 'path';
-import env from './env.config';
 import {
   DiscordGuilds,
   Users,
@@ -14,7 +13,8 @@ const PREFIX = parse(__filename).name; // eslint-disable-line
 
 export const db = knex({
   client: 'pg',
-  connection: env.POSTGRES_DBURL,
+  // connection: 'postgres://tripbot_discord:4pMQz8U$3KgKFGihNw*a38t6@api.tripsit.me:5432/tripsit',
+  connection: 'postgres://tripsit_api:P@ssw0rd@localhost:5432/tripsit',
 });
 
 /**
