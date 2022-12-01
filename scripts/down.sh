@@ -25,7 +25,7 @@ echo "Removing Images"
 container_images="$(docker images -q)"
 if [[ ! -z "${container_images}" ]]; then
 	echo "Images: ${container_images}"
-	docker image rm ${container_images}
+	docker image rm ${container_images} || echo "Cannot remove images"
 fi
 unset container_images
 

@@ -9,7 +9,6 @@ for project_id in "${ALL_PROJECTS[@]}"; do
             echo "Cloning ${project_id}..."
             git clone https://github.com/tripsit/${project_id}.git ${project_path}
             # git clone "git@github.com:TripSit/${project_id}.git" "${project_path}" -q
-            # This gives me an error in codespaces
 
             # For now we need to checkout the postgres branch of tripbot
             if [ ${project_id} = http-api ]; then
