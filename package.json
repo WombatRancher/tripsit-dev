@@ -3,6 +3,10 @@
     "private": true,
     "version": "0.1.0",
     "main": "./tsctl",
+    "engines": {
+        "node": "16.17.1",
+        "npm": "9.1.3"
+      },
     "scripts": {
         "chkenv": "./tsctl chkenv",
         "bootstrap": "./tsctl bootstrap",
