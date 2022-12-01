@@ -4,8 +4,8 @@ set -e
 ALL_PROJECTS=( \
 	"http-api" \
 	"tripsit-discord-bot" \
-	"admin-panel" \
-	"data-admin" \
+	# "admin-panel" \
+	# "data-admin" \
 )
 
 DOCKER_COMPOSE_PROJECT_IDS=( \
