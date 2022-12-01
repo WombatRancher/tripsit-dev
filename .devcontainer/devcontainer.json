@@ -19,7 +19,7 @@
 				"MariusAlchimavicius.json-to-ts",
 				"SonarSource.sonarlint-vscode",
 				"mikestead.dotenv",
-				"EditorConfig.EditorConfig",
+				"EditorConfig.EditorConfig"
 			]
 		}
 	},
@@ -35,7 +35,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install -g npm@9.1.3",
+	"postCreateCommand": "npm install -g npm@9.1.3 && npm install -g npm-check-updates"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
