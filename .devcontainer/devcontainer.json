@@ -19,13 +19,16 @@
 				"MariusAlchimavicius.json-to-ts",
 				"SonarSource.sonarlint-vscode",
 				"mikestead.dotenv",
-				"EditorConfig.EditorConfig"
+				"EditorConfig.EditorConfig",
+				"ckolkman.vscode-postgres"
 			]
 		}
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {"version": "16.17.1"},
-		"ghcr.io/devcontainers/features/docker-from-docker:1": {}
+		"ghcr.io/devcontainers/features/docker-from-docker:1": {},
+		"ghcr.io/devcontainers-contrib/features/jest:1": {},
+		"ghcr.io/devcontainers-contrib/features/typescript:1": {}
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
