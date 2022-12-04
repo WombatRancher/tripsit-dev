@@ -10,7 +10,8 @@ for project_id in "${DOCKER_COMPOSE_PROJECT_IDS[@]}"; do
 	echo "Composing ${project_id}"
 	docker compose \
 		-f "${REPOS_PATH}/${project_id}/docker-compose.yml" \
-		--env-file ./.env up -d --build
+		up -d --build
+		# --env-file ./.env up -d --build
 	# Run only on the http-api project
 	if [ ${project_id} = http-api ]; then
 	  sleep 10
