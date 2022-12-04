@@ -16,7 +16,8 @@
         "down": "./tsctl down",
         "lint": "eslint --fix --ext .ts,.js .",
         "patch": "npm version patch -git-tag-version false",
-        "update-db": "ts-node --transpile-only ./scripts/updateDB.ts"
+        "update-db": "ts-node --transpile-only ./scripts/updateDB.ts",
+        "sonar-scanner": "sonar-scanner"
     },
     "authors": [
         "SevenCats <sevencats@tripsit.me>",
