@@ -13,6 +13,8 @@
         "up": "./tsctl up",
         "test": "./tsctl test",
         "clean": "./tsctl clean",
+        "refreshDb": "npm --prefix 'repos/http-api' run reset-db",
+        "tripbotLogs": "docker container logs tripsit_discord_bot -f",
         "down": "./tsctl down",
         "lint": "eslint --fix --ext .ts,.js .",
         "patch": "npm version patch -git-tag-version false",

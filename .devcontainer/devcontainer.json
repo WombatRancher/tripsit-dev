@@ -4,6 +4,12 @@
 	"name": "Ubuntu",
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 
+	"hostRequirements": {
+		"cpus": 4,
+		"memory": "4gb",
+		"storage": "32gb" 
+ 	},
+
 	// Configure tool-specific properties.
 	"customizations": {
 		// Configure properties specific to VS Code.
