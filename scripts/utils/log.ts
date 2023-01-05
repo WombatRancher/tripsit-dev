@@ -3,7 +3,9 @@ import {
   format,
   transports,
   addColors,
+  Logger,
 } from 'winston';
+import { parse } from 'path';
 
 const {
   combine,
@@ -23,10 +25,15 @@ addColors({
 const myFormat = printf(({
   level, message, timestamp, stack, ...metadata // eslint-disable-line
 }) => {
-  let msg = `${timestamp} `;
+  let msg = '';
+  if (env.NODE_ENV === 'production') {
+    msg += '(Prd) ';
+  } else {
+    msg += `(Dev) ${timestamp} `;
+  }
 
   // This makes it so that the logs look nice and even
-  // Idk why the length is 15, maybe cuz of colors?
+  // Idk why the length is 15, maybe cuz of colors
   if (level.length < 15) {
     msg += `${level}  `;
   } else {
@@ -47,9 +54,18 @@ const myFormat = printf(({
 });
 
 // We only want logtail logs in production
-const transportOptions = [new transports.Console()];
+let transportOptions = [];
+if (env.NODE_ENV === 'production') {
+  transportOptions = [
+    new transports.Console(),
+  ];
+} else {
+  transportOptions = [
+    new transports.Console(),
+  ];
+}
 
-const log = createLogger({
+export const logger = createLogger({
   level: 'debug',
   format: combine(
     format.colorize({ all: true }),
@@ -59,5 +75,36 @@ const log = createLogger({
   ),
   transports: transportOptions,
 });
+
+declare global {
+  type Log = Logger;
+  // eslint-disable-next-line no-var, vars-on-top
+  var logger: Log; // NOSONAR
+  // eslint-disable-next-line no-var, vars-on-top
+  var log: { // NOSONAR
+    info: (prefix:string, message:string) => Log,
+    error: (prefix:string, message:string) => Log,
+    warn: (prefix:string, message:string) => Log,
+    debug: (prefix:string, message:string) => Log,
+    http: (prefix:string, message:string) => Log,
+  };
+  // eslint-disable-next-line no-var, vars-on-top
+  var f:(filename:string) => string; // NOSONAR
+}
+
+export const log = {
+  info: (F: string, message: string) => logger.info(`[${F}] ${message}`),
+  error: (F: string, message: string) => logger.error(`[${F}] ${message}`),
+  warn: (F: string, message: string) => logger.warn(`[${F}] ${message}`),
+  debug: (F: string, message: string) => logger.debug(`[${F}] ${message}`),
+  http: (F: string, message: string) => logger.http(`[${F}] ${message}`),
+};
+
+global.log = log;
+global.logger = logger;
+
+global.f = function f(filename: string) {
+  return `${parse(filename).name}`;
+};
 
 export default log;
