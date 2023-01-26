@@ -10,29 +10,6 @@ for project_id in "${ALL_PROJECTS[@]}"; do
             git clone https://github.com/tripsit/${project_id}.git ${project_path}
             # git clone "git@github.com:TripSit/${project_id}.git" "${project_path}" -q
 
-            # For now we need to checkout the postgres branch of tripbot
-            # if [ ${project_id} = http-api ]; then
-            #     # echo "Changing branch on ${project_id}"
-            #     cd ./repos/${project_id}
-            #     # echo "Changed directory"
-            #     git checkout development
-            #     # echo "Checked out dev/linting"
-            #     cd ..
-            #     cd ..
-            #     # echo "Back to root"
-            # fi
-
-            # # For now we need to checkout the postgres branch of tripbot
-            # if [ ${project_id} = tripsit-discord-bot ]; then
-            #     # echo "Changing branch on ${project_id}"
-            #     cd ~/tripsit-dev/repos/${project_id}
-            #     # echo "Changed directory"
-            #     git checkout postgres
-            #     # echo "Checked out dev/linting"
-            #     cd ~/tripsit-dev
-            #     # echo "Back to root"
-            # fi
-
             # If npm package npm install
             if [[ -f "${project_path}/package.json" ]]; then
                 echo "Installing npm packages for ${project_id}"
