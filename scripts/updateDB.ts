@@ -1,7 +1,7 @@
 import knex from 'knex';
 import { parse } from 'path';
 import { Users, UserExperience, ExperienceType } from '../repos/http-api/type-output/pgdb'; // eslint-disable-line
-import log from './utils/log';
+import { log } from './utils/log';
 
 const F = parse(__filename).name;
 
@@ -49,6 +49,6 @@ export async function prodToDev() {
 }
 
 prodToDev().catch(err => {
-  log.error(err);
+  log.error(F, err);
   process.exit(200);
 });
