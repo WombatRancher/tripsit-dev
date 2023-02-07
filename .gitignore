@@ -1,2 +1,7 @@
 /repos/*
 !/repos/.gitkeep
+/node_modules/*
+.env
+.vscode/*
+node_modules
+.scannerwork/
