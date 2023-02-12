@@ -30,12 +30,12 @@ export async function prodToDev() {
     // 'user_drug_doses',
     // 'user_reminders',
     // 'user_tickets',
-    'user_actions',
-    'discord_guilds',
-    'rss',
+    // 'user_actions',
+    // 'discord_guilds',
+    // 'rss',
     'personas',
     'rpg_inventory',
-    'reaction_roles',
+    // 'reaction_roles',
   ];
 
   for (const tableName of tableNames) { // eslint-disable-line
