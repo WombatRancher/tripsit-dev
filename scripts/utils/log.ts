@@ -26,7 +26,7 @@ const myFormat = printf(({
   level, message, timestamp, stack, ...metadata // eslint-disable-line
 }) => {
   let msg = '';
-  if (env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     msg += '(Prd) ';
   } else {
     msg += `(Dev) ${timestamp} `;
@@ -54,16 +54,9 @@ const myFormat = printf(({
 });
 
 // We only want logtail logs in production
-let transportOptions = [];
-if (env.NODE_ENV === 'production') {
-  transportOptions = [
-    new transports.Console(),
-  ];
-} else {
-  transportOptions = [
-    new transports.Console(),
-  ];
-}
+const transportOptions = [
+  new transports.Console(),
+];
 
 export const logger = createLogger({
   level: 'debug',
@@ -77,16 +70,16 @@ export const logger = createLogger({
 });
 
 declare global {
-  type Log = Logger;
+  type Logging = Logger;
   // eslint-disable-next-line no-var, vars-on-top
-  var logger: Log; // NOSONAR
+  var logger: Logging; // NOSONAR
   // eslint-disable-next-line no-var, vars-on-top
   var log: { // NOSONAR
-    info: (prefix:string, message:string) => Log,
-    error: (prefix:string, message:string) => Log,
-    warn: (prefix:string, message:string) => Log,
-    debug: (prefix:string, message:string) => Log,
-    http: (prefix:string, message:string) => Log,
+    info: (prefix:string, message:string) => Logging,
+    error: (prefix:string, message:string) => Logging,
+    warn: (prefix:string, message:string) => Logging,
+    debug: (prefix:string, message:string) => Logging,
+    http: (prefix:string, message:string) => Logging,
   };
   // eslint-disable-next-line no-var, vars-on-top
   var f:(filename:string) => string; // NOSONAR

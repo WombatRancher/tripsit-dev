@@ -1,7 +1,8 @@
 import knex from 'knex';
 import { parse } from 'path';
-import { Users, UserExperience, ExperienceType } from '../repos/http-api/type-output/pgdb'; // eslint-disable-line
 import { log } from './utils/log';
+
+require('dotenv').config();
 
 const F = parse(__filename).name;
 
@@ -13,7 +14,7 @@ export async function prodToDev() {
   // Initialize Production DB
   const prodDB = knex({
     client: 'pg',
-    connection: 'postgres://tripbot_discord:4pMQz8U$3KgKFGihNw*a38t6@api.tripsit.me:5432/tripsit',
+    connection: process.env.POSTGRES_DBURL_PROD,
   });
 
   // Initialize Dev DB
@@ -22,25 +23,47 @@ export async function prodToDev() {
     connection: 'postgres://tripsit_api:P@ssw0rd@localhost:5432/tripsit',
   });
 
+  // This needs to happen in a very specific order to resolve dependances
   const tableNames = [
     'users',
     'user_experience',
-    'user_drug_doses',
-    'user_reminders',
-    'user_experience',
-    'user_tickets',
+    // 'user_drug_doses',
+    // 'user_reminders',
+    // 'user_tickets',
     'user_actions',
     'discord_guilds',
+    'rss',
+    'personas',
+    'rpg_inventory',
+    'reaction_roles',
   ];
 
   for (const tableName of tableNames) { // eslint-disable-line
     const records = await prodDB(tableName).select(); // eslint-disable-line
     log.debug(F, `Copying ${tableName} with ${records.length} records`);
     for (const record of records) { // eslint-disable-line
-      await devDB(tableName) // eslint-disable-line
-        .insert(record)
-        .onConflict('id')
-        .merge(); // eslint-disable-line
+      if (tableName === 'users') {
+        if (record.email) continue; // eslint-disable-line
+        try {
+          await devDB(tableName) // eslint-disable-line
+            .insert(record)
+            .onConflict(['discord_id'])
+            .merge(['birthday', 'discord_bot_ban', 'discord_id', 'email', 'empathy_points', 'irc_id', 'joined_at', 'karma_given', 'karma_received', 'last_seen_at', 'last_seen_in', 'matrix_id', 'mindset_role', 'mindset_role_expires_at', 'move_points', 'password_hash', 'removed_at', 'roles', 'sparkle_points', 'ticket_ban', 'timezone', 'username']); // eslint-disable-line
+        } catch (err:any) {
+          log.error(F, err);
+          log.debug(F, `Copying user ${JSON.stringify(record, null, 2)}`);
+        }
+      } else {
+        try {
+          await devDB(tableName) // eslint-disable-line
+            .insert(record)
+            .onConflict(['id'])
+            .merge();
+        } catch (err:any) {
+          log.error(F, err);
+          log.debug(F, `Copying ${tableName} ${JSON.stringify(record, null, 2)}`);
+        }
+      }
     }
   }
 

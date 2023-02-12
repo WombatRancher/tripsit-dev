@@ -6,7 +6,7 @@
     "engines": {
         "node": "16.17.1",
         "npm": "9.1.3"
-      },
+    },
     "scripts": {
         "chkenv": "./tsctl chkenv",
         "bootstrap": "./tsctl bootstrap",
@@ -42,6 +42,7 @@
         "typescript": "^4.9.3"
     },
     "dependencies": {
+        "dotenv": "^16.0.3",
         "knex": "^2.3.0",
         "winston": "^3.8.2"
     }
