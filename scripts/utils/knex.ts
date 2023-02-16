@@ -1,15 +1,13 @@
 import knex from 'knex';
-import { parse } from 'path';
 import {
   DiscordGuilds,
   Users,
   UserTickets,
   // TicketStatus,
   // DiscordGuilds,
-} from '../repos/http-api/type-output/pgdb'; // eslint-disable-line
-import log from './log'; // eslint-disable-line
+} from '../repos/http-api/type-output/database.d'; // eslint-disable-line
 
-const PREFIX = parse(__filename).name; // eslint-disable-line
+const F = f(__filename); // eslint-disable-line
 
 export const db = knex({
   client: 'pg',

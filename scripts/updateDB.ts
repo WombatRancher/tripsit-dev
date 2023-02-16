@@ -14,7 +14,7 @@ export async function prodToDev() {
   // Initialize Production DB
   const prodDB = knex({
     client: 'pg',
-    connection: process.env.POSTGRES_DBURL_PROD,
+    connection: process.env.POSTGRES_DB_URL_PROD,
   });
 
   // Initialize Dev DB
