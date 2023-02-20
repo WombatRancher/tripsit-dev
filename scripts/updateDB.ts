@@ -9,7 +9,7 @@ const F = parse(__filename).name;
 export default prodToDev;
 
 export async function prodToDev() {
-  log.debug(F, 'Starting prodToDev');
+  log.info(F, 'Starting prodToDev');
 
   // Initialize Production DB
   const prodDB = knex({
@@ -40,7 +40,7 @@ export async function prodToDev() {
 
   for (const tableName of tableNames) { // eslint-disable-line
     const records = await prodDB(tableName).select(); // eslint-disable-line
-    log.debug(F, `Copying ${tableName} with ${records.length} records`);
+    log.info(F, `Copying ${tableName} with ${records.length} records`);
     for (const record of records) { // eslint-disable-line
       if (tableName === 'users') {
         if (record.email) continue; // eslint-disable-line
@@ -51,7 +51,7 @@ export async function prodToDev() {
             .merge(['birthday', 'discord_bot_ban', 'discord_id', 'email', 'empathy_points', 'irc_id', 'joined_at', 'karma_given', 'karma_received', 'last_seen_at', 'last_seen_in', 'matrix_id', 'mindset_role', 'mindset_role_expires_at', 'move_points', 'password_hash', 'removed_at', 'roles', 'sparkle_points', 'ticket_ban', 'timezone', 'username']); // eslint-disable-line
         } catch (err:any) {
           log.error(F, err);
-          log.debug(F, `Copying user ${JSON.stringify(record, null, 2)}`);
+          log.info(F, `Copying user ${JSON.stringify(record, null, 2)}`);
         }
       } else {
         try {
@@ -61,7 +61,7 @@ export async function prodToDev() {
             .merge();
         } catch (err:any) {
           log.error(F, err);
-          log.debug(F, `Copying ${tableName} ${JSON.stringify(record, null, 2)}`);
+          log.error(F, `Copying ${tableName} ${JSON.stringify(record, null, 2)}`);
         }
       }
     }
