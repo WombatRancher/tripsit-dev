@@ -53,6 +53,16 @@ export async function prodToDev() {
           log.error(F, err);
           log.info(F, `Copying user ${JSON.stringify(record, null, 2)}`);
         }
+      } else if (tableName === 'user_experience') {
+        try {
+          await devDB(tableName) // eslint-disable-line
+            .insert(record)
+            .onConflict(['user_id', 'type', 'category'])
+            .merge();
+        } catch (err:any) {
+          log.error(F, err);
+          log.info(F, `Copying user ${JSON.stringify(record, null, 2)}`);
+        }
       } else {
         try {
           await devDB(tableName) // eslint-disable-line

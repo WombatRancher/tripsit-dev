@@ -5,6 +5,7 @@ AUDITLOG
 benzo
 BESTOF
 birthdate
+boops
 botban
 BOTLOG
 botmod
@@ -101,6 +102,7 @@ remindme
 roas
 Robo
 RTRIPSIT
+sadface
 SLEEPYRADIO
 slytherin
 SOCIALMEDIA
