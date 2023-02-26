@@ -5,6 +5,7 @@ AUDITLOG
 benzo
 BESTOF
 birthdate
+Blurple
 boops
 botban
 BOTLOG
@@ -153,6 +154,7 @@ UNDERBAN
 Underbanned
 underbanning
 Underbans
+UNFULL
 UNTIMEOUT
 untimeouted
 untiming
