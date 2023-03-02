@@ -31,6 +31,7 @@ DELERIANTS
 DEVANNCOUNCE
 DEVELOPMENTVOICE
 DEVOFFTOPIC
+Disassociatives
 DISCORDADMIN
 DISSOCIATIVES
 DISSONAUT
@@ -40,6 +41,7 @@ dramacounter
 dramaissue
 dramatime
 DRUGQUESTIONS
+Empathogens
 erowid
 FLOZ
 flubromazepam
@@ -53,6 +55,7 @@ guildless
 Halfling
 HARMREDUCTIONCENTRE
 HELPDESK
+Hipperooni
 HOWTOHELP
 HRRESOURCES
 hufflepuff
@@ -104,6 +107,7 @@ roas
 Robo
 RTRIPSIT
 sadface
+Sheeeeeesh
 SLEEPYRADIO
 slytherin
 SOCIALMEDIA
@@ -117,6 +121,7 @@ TALKTOTS
 TEAMMEETING
 TEAMTRIPSIT
 TECHHELP
+Teknos
 TEMPVOICE
 testkit
 testkits
@@ -174,4 +179,5 @@ VUTEUNDERBAN
 warmline
 WEBTRIPSIT
 WIKICONTENT
+Wowee
 Xand
