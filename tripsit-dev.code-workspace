@@ -39,6 +39,7 @@
 				"scope": "workspace"
 			}
 		},
+		"deepscan.enable": true,
 
 	}
 }
