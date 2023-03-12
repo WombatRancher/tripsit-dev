@@ -63,6 +63,16 @@ export async function prodToDev() {
           log.error(F, err);
           log.info(F, `Copying user ${JSON.stringify(record, null, 2)}`);
         }
+      } else if (tableName === 'rpg_inventory') {
+        try {
+          await devDB(tableName) // eslint-disable-line
+            .insert(record)
+            .onConflict(['persona_id'])
+            .merge();
+        } catch (err:any) {
+          log.error(F, err);
+          log.info(F, `Copying user ${JSON.stringify(record, null, 2)}`);
+        }
       } else {
         try {
           await devDB(tableName) // eslint-disable-line

@@ -18,7 +18,7 @@
         "down": "./tsctl down",
         "lint": "eslint --fix --ext .ts,.js .",
         "patch": "npm version patch -git-tag-version false",
-        "update-db": "ts-node --transpile-only ./scripts/updateDB.ts",
+        "backup-db": "ts-node --transpile-only ./scripts/backupDB.ts",
         "sonar-scanner": "sonar-scanner"
     },
     "authors": [
