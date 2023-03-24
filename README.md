@@ -58,9 +58,8 @@ https://www.pgadmin.org/download/
   * WSL - Open any folder in the Windows Subsystem for Linux (WSL) and take advantage of Visual Studio Code's full feature set.
     * https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl
 
-**Enter WSL (Ubuntu) machine**
-Open VSCode \
-Click the green icon in the bottom left corner \
+**Enter WSL (Ubuntu) machine through VSCode**\
+Using the VSCode you just installed, click the green icon in the bottom left corner \
 Click "Connect to WSL" \
 Continue to follow the instructions, including the **Linux instructions** below
 
