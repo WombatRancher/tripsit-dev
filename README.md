@@ -144,15 +144,7 @@ I would love to somehow make a single .env file in the root of the project, but 
 Start the containers, including postgres and tripbot
 > ./tsctl up
 
-# Extra tasks
-**Confirm the environment is up** \
-To see running containers, use the docker desktop app or run:
-> docker container ps
-
-**Watch tripbot logs** \
-Use the docker desktop app or run:
-> npm run tripbotLogs
-
+**This this point containers are runnning, but you need to update permissions on the tables**
 **Connect PGAdmin4 to the database** \
 PostGresAdmin4 is a GUI for managing PostGres databases, it is not required but it's nice to have. I'm not even that great at using it, so instructions are limited
 1. Open PGAdmin4
@@ -166,6 +158,24 @@ PostGresAdmin4 is a GUI for managing PostGres databases, it is not required but 
 2. Click Save
 2. Right click on the server you just created and select Connect
 2. Right click on the Databases node and select Refresh
+2. Click on the tripsit database
+2. At the top click Tools > Grant Wizard
+2. On the object selection tab, select all objects and click next
+2. On the Priviledge Selection tab, click the plus sign
+2. In the new row, for Grantee select 'tripbot_discord' and for Priviledges select 'All', click next
+2. On the Review tab, click Finish
+
+You may need to restart the bot using 
+> ./tsctl up
+
+# Extra tasks
+**Confirm the environment is up** \
+To see running containers, use the docker desktop app or run:
+> docker container ps
+
+**Watch tripbot logs** \
+Use the docker desktop app or run:
+> npm run tripbotLogs
 
 You should see a database called tripsit
 
