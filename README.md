@@ -2,17 +2,17 @@
 
 This will set up a development environment for Tripsit.me. 
 
-It will install all the dependencies and set up a local database, the same as the production environment.
+It will install all the dependencies and set up a local database, the same as the production environment. \
 It will give you a local copy of the Tripsit Discord Bot.
 
-This is a work in progress. It's not perfect, and it's not complete. It's a work in progress.
+This is a work in progress. It's not perfect, and it's not complete. It's a work in progress. \
 If you have any questions, please ask in the #dev-general channel on the Tripsit Discord server.
 
 # Discord bot setup
 **Create a bot application** \
 https://discordjs.guide/preparations/setting-up-a-bot-application.html \
 Also bookmark this link because this site is super helpful! \
-Remember your bot token and client ID, you will need it later!
+**Remember your bot token and client ID, you will need it later!**
 
 **Join, and have your bot join, the TripSit Dev server** \
 The dev server is a rough copy of the main server, but gives you admin permissions to test things \
@@ -24,6 +24,62 @@ The emoji servers are used to store the custom emojis used by the bot \
 The bot will not work without these servers \
 https://discord.gg/Y5ErzrbPTj \
 https://discord.gg/bxbYqH5xFe
+
+# Codespaces Setup
+**Note: If you do this, you don't need to do the Windows/Linux setup.**
+## Setup the environment
+In this repo, click the green "Code" button, and then click "Open with Codespaces" \
+This will create a new Codespace for you, which is a cloud-based development environment \
+It will take a few minutes to set up, go get a coffee or something!
+
+## Setup your IDE
+When the codespace has been set up, enable NPM Scripts menu \
+In the Explorer, click the three dots and enable 'NPM Scripts' \
+Click on the tripsit-dev.code-workspace file and then click the green "Open Workspace" button \
+Once in the workspace, open a new terminal in the tripsit-discord-bot folder \
+Set up your .env file by copying the .env.example file
+
+> cp .env.example .env
+
+Modify the .env file to include your bot token and client ID from above. \
+**Remember: Any modifications to the .env file will require you to rebuild the bot** \
+Scroll to the @tripsit/tripsit-discord-bot section and run the 'docker-rebuild' script \
+**Don't do this yet, just remember that this is how you rebuild the bot.**
+
+## Start the bot and database
+Run the @tripsit/up command from NPM Scripts: This will build the containers and start the bot and the DB. \
+If everything goes right, your bot should join the Dev and Two Emoji guilds. \
+
+## Populate the database
+The database is ready, but not populated. \
+Run the @http-api/reset-db command to create the database and populate it with data. \
+**This is a 1:1 copy of TripSit's production database. It contains all the drugs, aliases, and interactions.** \
+This is *your* personal development database: any changes you make here do not impact production. \
+If you ever feel like you messed up the database, just run the @http-api/reset-db command again.
+
+## Watch the logs
+Run the @tripsit/tripbotLogs npm script to see the logs from the bot.
+
+# Troubleshooting
+**"Unknown guild" error** \
+If you get this error, it means the bot is trying to access a guild that it's not in. \
+Make sure you and the bot are in the Dev guild and two Emoji guilds.
+
+**"Unknown Emoji" error** \
+If you get this error, it means the bot is trying to access an emoji that it doesn't have access to. \
+Make sure you and the bot are in the two Emoji guilds.
+
+**"Unknown permissions" error** \
+If you get this error, it depends on the command being used, but it means permissions are not right. \
+Make sure the bot has the Tripbot Dev role in the Dev guild, talk to Moonbear if it doesn't.
+
+**Things don't seem like they're running?** \
+Try the @tripsit/up NPM script. This will rebuild the containers and start the bot/db. \
+Things seem *really* messed up? \
+Try the @tripsit/clean command. This will remove all repos, containers and images, and then rebuild them from scratch.  \
+**Everything in the /repos folder will be deleted, save your .env file!!!**
+
+# Only continue if the above doesn't work and you've talked to Moonbear, or you just like doing things the hard way
 
 # Windows Setup
 **Install Windows Subsystem for Linux (WSL) and Ubuntu 20.14.04 LTS** \
@@ -115,7 +171,6 @@ Follow instructions here: https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-0
 **Open workspace** \
 Click "Open workspace" \
 If you don't see, this, make sure to File > Open workspace from file > Select tripsit-dev.code-workspace
-
 
 **Build the environment**
 Open a new terminal in VSCode using the @tripsit workspace
