@@ -3,7 +3,7 @@ name: TestAndScan
 on:
   push:
     branches:
-      - main
+      - master
       - development
 
 jobs:
