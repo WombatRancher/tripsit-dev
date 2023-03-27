@@ -2,10 +2,6 @@
 	"folders": [
 		{
 			"name": "@TripSit/TripBot",
-			"path": "./repos/tripsit-discord-bot"
-		},
-		{
-			"name": "@TripSit/TripBot",
 			"path": "./repos/TripBot"
 		},
 		{
@@ -30,7 +26,6 @@
 			"repos/": true
 		},
 		"eslint.workingDirectories": [
-			"./repos/tripsit-discord-bot",
 			"./repos/TripBot",
 			"./repos/http-api",
 			"./repos/admin-panel",
