@@ -36,18 +36,18 @@ It will take a few minutes to set up, go get a coffee or something!
 When the codespace has been set up, enable NPM Scripts menu \
 In the Explorer, click the three dots and enable 'NPM Scripts' \
 Click on the tripsit-dev.code-workspace file and then click the green "Open Workspace" button \
-Once in the workspace, open a new terminal in the tripsit-discord-bot folder \
+Once in the workspace, open a new terminal in the TripBot folder \
 Set up your .env file by copying the .env.example file
 
 > cp .env.example .env
 
 Modify the .env file to include your bot token and client ID from above. \
 **Remember: Any modifications to the .env file will require you to rebuild the bot** \
-Scroll to the @tripsit/tripsit-discord-bot section and run the 'docker-rebuild' script \
+Scroll to the @TripSit/TripBot section and run the 'docker-rebuild' script \
 **Don't do this yet, just remember that this is how you rebuild the bot.**
 
 ## Start the bot and database
-Run the @tripsit/up command from NPM Scripts: This will build the containers and start the bot and the DB. \
+Run the @TripSit/up command from NPM Scripts: This will build the containers and start the bot and the DB. \
 If everything goes right, your bot should join the Dev and Two Emoji guilds. \
 
 ## Populate the database
@@ -58,7 +58,7 @@ This is *your* personal development database: any changes you make here do not i
 If you ever feel like you messed up the database, just run the @http-api/reset-db command again.
 
 ## Watch the logs
-Run the @tripsit/tripbotLogs npm script to see the logs from the bot.
+Run the @TripSit/tripbotLogs npm script to see the logs from the bot.
 
 # Troubleshooting
 **"Unknown guild" error** \
@@ -74,9 +74,9 @@ If you get this error, it depends on the command being used, but it means permis
 Make sure the bot has the Tripbot Dev role in the Dev guild, talk to Moonbear if it doesn't.
 
 **Things don't seem like they're running?** \
-Try the @tripsit/up NPM script. This will rebuild the containers and start the bot/db. \
+Try the @TripSit/up NPM script. This will rebuild the containers and start the bot/db. \
 Things seem *really* messed up? \
-Try the @tripsit/clean command. This will remove all repos, containers and images, and then rebuild them from scratch.  \
+Try the @TripSit/clean command. This will remove all repos, containers and images, and then rebuild them from scratch.  \
 **Everything in the /repos folder will be deleted, save your .env file!!!**
 
 # Only continue if the above doesn't work and you've talked to Moonbear, or you just like doing things the hard way
@@ -173,7 +173,7 @@ Click "Open workspace" \
 If you don't see, this, make sure to File > Open workspace from file > Select tripsit-dev.code-workspace
 
 **Build the environment**
-Open a new terminal in VSCode using the @tripsit workspace
+Open a new terminal in VSCode using the @TripSit workspace
 > ./tsctl chkenv
 
 This makes sure your environment has all the required software installed. This may ask you to restart WSL, you can do that via:
@@ -186,14 +186,14 @@ When that's done, run the boostrap command
 This downloads the repos from GitHub and installs their dependencies
 
 **Setup the .env file** \
-Open the .env.example file in the @tripsit-discord-bot workspace \
+Open the .env.example file in the @TripSit/TripBot workspace \
 Modify the file to include the required information \
 > DISCORD_CLIENT_ID = (In your Discord Developer Portal) \
 > DISCORD_GUILD_ID = (Taken from the discord guild your bot will use as home) \
 > DISCORD_CLIENT_TOKEN = (In your Discord Developer Portal) 
 
-Copy this file to .env in the same @tripsit-discord-bot workspace \
-Copy this file to .env in the @tripsit workspace, so that it's not erased if you Clean the project \
+Copy this file to .env in the same @TripSit/TripBot workspace \
+Copy this file to .env in the @TripSit workspace, so that it's not erased if you Clean the project \
 I would love to somehow make a single .env file in the root of the project, but I don't know how to do that
 
 Start the containers, including postgres and tripbot

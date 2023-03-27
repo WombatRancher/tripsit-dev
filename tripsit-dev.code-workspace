@@ -1,23 +1,27 @@
 {
 	"folders": [
 		{
-			"name": "@tripsit/tripsit-discord-bot",
+			"name": "@TripSit/TripBot",
 			"path": "./repos/tripsit-discord-bot"
 		},
 		{
-			"name": "@tripsit/http-api",
+			"name": "@TripSit/TripBot",
+			"path": "./repos/TripBot"
+		},
+		{
+			"name": "@TripSit/http-api",
 			"path": "./repos/http-api"
 		},
 		{
-			"name": "@tripsit/admin-panel",
+			"name": "@TripSit/admin-panel",
 			"path": "./repos/admin-panel"
 		},
 		{
-			"name": "@tripsit/data-admin",
+			"name": "@TripSit/data-admin",
 			"path": "./repos/data-admin"
 		},
 		{
-			"name": "@tripsit",
+			"name": "@TripSit",
 			"path": "."
 		},
 	],
@@ -27,6 +31,7 @@
 		},
 		"eslint.workingDirectories": [
 			"./repos/tripsit-discord-bot",
+			"./repos/TripBot",
 			"./repos/http-api",
 			"./repos/admin-panel",
 			"./repos/data-admin"
@@ -34,7 +39,7 @@
 		"cSpell.customDictionaries": {
 			"custom-dictionary-workspace": {
 				"name": "custom-dictionary-workspace",
-				"path": "${workspaceFolder:@tripsit}/.cspell/custom-dictionary-workspace.txt",
+				"path": "${workspaceFolder:@TripSit}/.cspell/custom-dictionary-workspace.txt",
 				"addWords": true,
 				"scope": "workspace"
 			}

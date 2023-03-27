@@ -3,14 +3,14 @@ set -e
 
 ALL_PROJECTS=( \
 	"http-api" \
-	"tripsit-discord-bot" \
+	"TripBot" \
 	# "admin-panel" \
 	# "data-admin" \
 )
 
 DOCKER_COMPOSE_PROJECT_IDS=( \
 	"http-api" \
-	"tripsit-discord-bot" \
+	"TripBot" \
 )
 
 ROOT_PATH="$(dirname "${0}")"
