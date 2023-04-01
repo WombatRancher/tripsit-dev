@@ -11,15 +11,15 @@
         "chkenv": "./tsctl chkenv",
         "bootstrap": "./tsctl bootstrap",
         "up": "./tsctl up",
+        "tripbotLogs": "docker container logs tripsit_discord_bot -f",
+        "backup-db": "ts-node --transpile-only ./scripts/backupDB.ts",
+        "sonar-scanner": "sonar-scanner",
+        "patch": "npm version patch -git-tag-version false",
+        "lint": "eslint --fix --ext .ts,.js .",
         "test": "./tsctl test",
         "clean": "./tsctl clean",
-        "refreshDb": "npm --prefix 'repos/http-api' run reset-db",
-        "tripbotLogs": "docker container logs tripsit_discord_bot -f",
         "down": "./tsctl down",
-        "lint": "eslint --fix --ext .ts,.js .",
-        "patch": "npm version patch -git-tag-version false",
-        "backup-db": "ts-node --transpile-only ./scripts/backupDB.ts",
-        "sonar-scanner": "sonar-scanner"
+        "refreshDb": "npm --prefix 'repos/http-api' run reset-db"
     },
     "authors": [
         "SevenCats <sevencats@tripsit.me>",
