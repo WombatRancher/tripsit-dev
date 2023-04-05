@@ -67,6 +67,7 @@ DISSONAUT
 DISSOS
 dmitry
 DMMEFORHELP
+Dockerized
 doggos
 Donezo
 Doob
@@ -91,6 +92,7 @@ Gelcaps
 Geolines
 GOLDLOUNGE
 Goulding
+Greyple
 GROUPCOLLAB
 gryffindor
 guildless
@@ -98,6 +100,7 @@ Halfling
 HARMREDUCTIONCENTRE
 helloenjoy
 HELPDESK
+Hipperoni
 Hipperooni
 hopalong
 HOWTOHELP
@@ -158,6 +161,7 @@ nbome
 NEEDSHELP
 neonflames
 NOSONAR
+offtopic
 OPENTRIPSIT
 Oxycodone
 particledream
@@ -193,6 +197,7 @@ smhdwmoy
 SOCIALMEDIA
 softmurmur
 sonarjs
+Sonarqube
 soundwaves
 starthere
 startlog
@@ -204,6 +209,7 @@ subcommandgroup
 Subcutanious
 SYNTHWAVERADIO
 TALKTOTS
+TBDB
 TEAMMEETING
 TEAMTRIPSIT
 TECHHELP

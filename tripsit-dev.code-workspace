@@ -40,6 +40,11 @@
 			}
 		},
 		"deepscan.enable": true,
+		"cSpell.ignoreWords": [
+			"acff",
+			"dadada",
+			"ffdd"
+		],
 
 	}
 }
