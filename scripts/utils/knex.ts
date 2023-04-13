@@ -24,7 +24,7 @@ export async function getUser(
   discordId:string | null,
   userId:string | null,
 ):Promise<Users> {
-  // log.info(`[${PREFIX}] getUser started with: discordId: ${discordId} | userId: ${userId}`);
+  // log.info(F, `getUser started with: discordId: ${discordId} | userId: ${userId}`);
   let data = {} as Users | undefined;
 
   if (discordId) {
@@ -32,12 +32,12 @@ export async function getUser(
       .select('*')
       .where('discord_id', discordId)
       .first();
-    // log.debug(`[${PREFIX}] data1: ${JSON.stringify(data, null, 2)}`);
+    // log.debug(F, `data1: ${JSON.stringify(data, null, 2)}`);
     if (data === undefined) {
       [data] = (await db<Users>('users')
         .insert({ discord_id: discordId })
         .returning('*'));
-      // log.debug(`[${PREFIX}] data2: ${JSON.stringify(data, null, 2)}`);
+      // log.debug(F, `data2: ${JSON.stringify(data, null, 2)}`);
     }
   }
   if (userId) {
@@ -45,10 +45,10 @@ export async function getUser(
       .select('*')
       .where('id', userId)
       .first();
-    // log.debug(`[${PREFIX}] data3: ${JSON.stringify(data, null, 2)}`);
+    // log.debug(F, `data3: ${JSON.stringify(data, null, 2)}`);
   }
 
-  // log.debug(`[${PREFIX}] data4: ${JSON.stringify(data, null, 2)}`);
+  // log.debug(F, `data4: ${JSON.stringify(data, null, 2)}`);
 
   return data as Users;
 }
@@ -58,7 +58,7 @@ export async function getUser(
  * @param {string} guildId
  */
 export async function getGuild(guildId:string) {
-  // log.debug(`[${PREFIX}] getGuild started with: guildId: ${guildId}`);
+  // log.debug(F, `getGuild started with: guildId: ${guildId}`);
   let data = await db<DiscordGuilds>('discord_guilds')
     .select('*')
     .where('id', guildId)

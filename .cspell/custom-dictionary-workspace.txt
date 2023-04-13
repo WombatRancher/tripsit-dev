@@ -185,6 +185,7 @@ Repliable
 roas
 Robo
 roletechreviewer
+rollbar
 RTRIPSIT
 sadface
 selftimeout
