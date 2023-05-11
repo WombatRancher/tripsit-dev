@@ -4,6 +4,7 @@ set -e
 ALL_PROJECTS=( \
 	"http-api" \
 	"TripBot" \
+	"tripbot-website" \
 	# "admin-panel" \
 	# "data-admin" \
 )

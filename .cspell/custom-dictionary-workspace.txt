@@ -1,5 +1,6 @@
 's
 # Custom Dictionary Words
+activityid
 alprazolam
 anticheat
 arkadia
@@ -79,10 +80,12 @@ DRUGQUESTIONS
 Empathogens
 erowid
 etoh
+firstname
 FLOZ
 flubromazepam
 Flunitrazepam
 Froehde
+fullname
 futura
 Fymfm
 GABA
@@ -127,6 +130,7 @@ kipp
 kittos
 knexfile
 Laboradorite
+lastname
 LEADDEV
 leaderboard
 Leaderboard
@@ -152,6 +156,7 @@ MODHAVEN
 MODLOG
 modmail
 Modmail
+moodle
 Moonbear
 mrdoobharmony
 MSGLOG
@@ -283,9 +288,12 @@ waytogo
 weavesilk
 Weavesilk
 Webchat
+webservice
 WEBTRIPSIT
 WIKICONTENT
 Wowee
+wsfunction
+wstoken
 Wtgd
 Xand
 Zolpidem

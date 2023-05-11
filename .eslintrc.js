@@ -10,10 +10,13 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:sonarjs/recommended',
   ],
   plugins: [
     '@typescript-eslint',
+    'sonarjs',
   ],
+  ignorePatterns: ['.eslintrc.js', '*/repos/*.*.ts'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'script',
@@ -27,8 +30,12 @@ module.exports = {
     'arrow-parens': [2, 'as-needed'],
     // This is a personal preference to enforce good code
     // '@typescript-eslint/no-non-null-assertion': 'warn',
+    // Enforce max line length of 120
     'max-len': ['warn', { code: 120 }],
-    'eslintno-multi-str': 'off',
+    // Allow allow any on objects, require definition of types
+    '@typescript-eslint/no-explicit-any': 'warn',
+    // Limit complexity to 50
+    'sonarjs/cognitive-complexity': ['warn', 50],
   },
   overrides: [
     {
@@ -36,6 +43,7 @@ module.exports = {
       extends: [
         'airbnb-base',
         'airbnb-typescript/base',
+        'plugin:sonarjs/recommended',
       ],
       parserOptions: {
         project: '**/tsconfig.json',
@@ -47,9 +55,13 @@ module.exports = {
         // Removes () around single parameter arrow functions
         'arrow-parens': [2, 'as-needed'],
         // This is a personal preference to enforce good code
-        // '@typescript-eslint/no-non-null-assertion': 'warn',
+        '@typescript-eslint/no-non-null-assertion': 'warn',
+        // Enforce max line length of 120
         'max-len': ['warn', { code: 120 }],
-        'eslintno-multi-str': 'off',
+        // Allow allow any on objects, require definition of types
+        '@typescript-eslint/no-explicit-any': 'warn',
+        // The following will show up as errors, just want to get this pushed for now
+        'sonarjs/cognitive-complexity': ['warn', 50],
       },
     },
   ],

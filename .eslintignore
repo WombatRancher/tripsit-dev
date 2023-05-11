@@ -1,2 +1,3 @@
 **/database.d.ts
-**/archive
+**/archive/**
+**/repos/**

@@ -5,6 +5,10 @@
 			"path": "./repos/TripBot"
 		},
 		{
+			"name": "@TripSit/TripBot-website",
+			"path": "./repos/tripbot-website"
+		},
+		{
 			"name": "@TripSit/http-api",
 			"path": "./repos/http-api"
 		},
@@ -41,10 +45,9 @@
 		},
 		"deepscan.enable": true,
 		"cSpell.ignoreWords": [
-			"acff",
-			"dadada",
-			"ffdd"
+			"courseid",
+			"moodlewsrestformat",
+			"userid"
 		],
-
 	}
 }
